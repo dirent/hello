@@ -3,7 +3,7 @@ window.addEventListener( "load",
 
 console.log( "Hello Web Standards" )
 
-let h1 = document.querySelector("h1");
+let h1 = document.querySelector("#webstandards");
 let first = e => console.log( "first", e );
 
 h1.addEventListener("click", first );
@@ -24,6 +24,13 @@ let customEvent = new CustomEvent( "myevent",
 h1.addEventListener( "myevent",
         e => console.log(e) );
 h1.dispatchEvent(customEvent);
+
+let color = document.querySelector("input[type=color]");
+color.onchange = e => h1.style.backgroundColor = e.target.value;
+
+let text = document.querySelector("#userhint");
+text.onkeyup = e => h1.innerText = e.target.value;
+
 
 let nextPrime = function(n) {
     for( i=2; i<n/2; i++ ) {
