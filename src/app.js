@@ -29,7 +29,7 @@ let color = document.querySelector("input[type=color]");
 color.onchange = e => h1.style.backgroundColor = e.target.value;
 
 let text = document.querySelector("#userhint");
-text.onkeyup = e => h1.innerText = e.target.value;
+text.oninput = e => h1.innerText = e.target.value;
 
 
 let nextPrime = function(n) {
