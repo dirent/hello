@@ -7,6 +7,17 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="htmlgame.js" defer></script>
     <script src="app.js" defer></script>
+    <style>
+        p {
+            background-color: green;
+        }
+        .content {
+            background-color: red;
+        }
+        #detail {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
 <h1>HTML-Spiel</h1>
@@ -16,6 +27,9 @@
 </main>
 
 <h1 id="webstandards">Hello Web Standard!</h1>
+<p>hello world</p>
+<p class="content">my content</p>
+<p class="content" id="detail">detailed content</p>
 <div>
     <input id="userhint" type="text" placeholder="user hint"/>
     <input type="button" value="normal button"/>
