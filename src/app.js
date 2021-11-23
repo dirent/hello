@@ -31,6 +31,9 @@ color.onchange = e => h1.style.backgroundColor = e.target.value;
 let text = document.querySelector("#userhint");
 text.oninput = e => h1.innerText = e.target.value;
 
+let detail = document.getElementById('detail');
+detail.style.backgroundColor = 'white';
+detail.style.fontFamily = 'monospace';
 
 let nextPrime = function(n) {
     for( i=2; i<n/2; i++ ) {
