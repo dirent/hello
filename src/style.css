@@ -10,3 +10,6 @@ p {
 #detail {
     background-color: springgreen;
 }
+.mono {
+    font-family: monospace;
+}
