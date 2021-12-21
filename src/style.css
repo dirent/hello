@@ -1,14 +1,17 @@
+:root {
+    --corporate_background-color: #119a11;
+}
 body {
     font-family: sans-serif;
 }
 p {
-    background-color: green;
+    background-color: var(--corporate_background-color);
 }
 .content {
     background-color: silver;
 }
 #detail {
-    background-color: springgreen;
+    background-color: var(--corporate_background-color);
 }
 .mono {
     font-family: monospace;
