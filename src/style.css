@@ -1,5 +1,5 @@
 :root {
-    --corporate_background-color: #119a11;
+    --corporate_background-color: #70d070;
 }
 body {
     font-family: sans-serif;
@@ -13,6 +13,10 @@ p {
 }
 #detail {
     background-color: var(--corporate_background-color);
+    font-weight: bold;
+    margin: 20px auto;
+    padding: 10px;
+    border: 5px dotted black;
 }
 .mono {
     font-family: monospace;
