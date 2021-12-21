@@ -6,6 +6,7 @@ body {
 }
 p {
     background-color: var(--corporate_background-color);
+    max-width: 600px;
 }
 .content {
     background-color: silver;
