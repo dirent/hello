@@ -3,6 +3,7 @@
 }
 body {
     font-family: sans-serif;
+    height: 120vh;
 }
 p {
     background-color: var(--corporate_background-color);
@@ -25,4 +26,10 @@ section {
 }
 .mono {
     font-family: monospace;
+}
+#last {
+    background-color: lightcoral;
+    position: fixed;
+    top: 3em;
+    right: 1em;
 }

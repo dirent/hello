@@ -37,3 +37,6 @@ detail.classList.add('mono');
 let html = document.querySelector("html");
 console.log("html font size", window.getComputedStyle(html).fontSize)
 console.log("div font size", window.getComputedStyle(detail).fontSize);
+
+let last = document.getElementById("last");
+console.log("Position of last", window.getComputedStyle(last).position);
