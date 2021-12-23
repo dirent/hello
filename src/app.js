@@ -33,3 +33,7 @@ text.oninput = e => h1.innerText = e.target.value;
 
 let detail = document.getElementById('detail');
 detail.classList.add('mono');
+
+let html = document.querySelector("html");
+console.log("html font size", window.getComputedStyle(html).fontSize)
+console.log("div font size", window.getComputedStyle(detail).fontSize);
