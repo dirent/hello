@@ -1,15 +1,22 @@
 body {
     background-color: silver;
 }
-div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+div#container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.content {
     background-color: darkgreen;
-    width: 500px;
-    height: 200px;
-    padding: 1em 2em 3em 4em;
+    width: 250px;
+    height: 100px;
+    padding: 1em;
     border: 15px dashed black;
     box-sizing: border-box;
+    margin: 30px;
 }
