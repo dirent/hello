@@ -8,15 +8,16 @@ div#container {
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 div.content {
     background-color: darkgreen;
     width: 250px;
     height: 100px;
     padding: 1em;
-    border: 15px dashed black;
     box-sizing: border-box;
-    margin: 30px;
+    margin: 0.5em;
 }
