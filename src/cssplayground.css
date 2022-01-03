@@ -1,5 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+}
 section {
     background-color: silver;
+    height: 100vh;
     display: grid;
     grid-template-columns: 2fr 4fr;
     grid-template-rows: 1fr 6fr 1fr;
