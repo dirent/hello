@@ -1,16 +1,35 @@
-body {
+section {
     background-color: silver;
-}
-div#container {
     display: grid;
-    height: 50vh;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
     grid-column-gap: 0.5em;
     grid-row-gap: 0.5em;
 }
+header {
+    background-color: lightgreen;
+    grid-area: header;
+}
+nav {
+    background-color: lightblue;
+    grid-area: nav;
+}
+main {
+    background-color: yellowgreen;
+    grid-area: main;
+}
+footer {
+    background-color: blueviolet;
+    grid-area: footer;
+}
+nav ul {
+    padding-left: 1.5em;
+}
 div.content {
-    background-color: darkgreen;
     padding: 1em;
     box-sizing: border-box;
 }
