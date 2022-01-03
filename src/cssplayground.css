@@ -2,22 +2,15 @@ body {
     background-color: silver;
 }
 div#container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display: grid;
+    height: 50vh;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
 }
 div.content {
     background-color: darkgreen;
-    width: 250px;
-    height: 100px;
     padding: 1em;
     box-sizing: border-box;
-    margin: 0.5em;
 }
