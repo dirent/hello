@@ -12,8 +12,10 @@ section {
     "header header"
     "nav main"
     "footer footer";
-    grid-column-gap: 0.5em;
-    grid-row-gap: 0.5em;
+    grid-column-gap: 0.25em;
+    grid-row-gap: 0.1em;
+    justify-items: stretch;
+    align-items: stretch;
 }
 header {
     background-color: lightgreen;
@@ -26,10 +28,12 @@ nav {
 main {
     background-color: yellowgreen;
     grid-area: main;
+    align-self: start;
 }
 footer {
     background-color: blueviolet;
     grid-area: footer;
+    align-self: end;
 }
 nav ul {
     padding-left: 1.5em;
