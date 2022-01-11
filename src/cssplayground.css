@@ -21,6 +21,9 @@ nav {
     grid-column: 1;
 }
 main {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 0.2em;
     background-color: yellowgreen;
     grid-column: 2 / 3;
 }
@@ -33,6 +36,7 @@ nav ul {
     padding-left: 1.5em;
 }
 div.content {
+    background-color: #009900;
     padding: 1em;
     box-sizing: border-box;
 }
