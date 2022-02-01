@@ -22,7 +22,7 @@ nav {
 }
 main {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr 2fr);
     grid-gap: 0.2em;
     background-color: yellowgreen;
     grid-column: 2 / 3;
