@@ -1,12 +1,24 @@
 class App {
     constructor(message='duke') {
         this.message = message;
-        console.log("created",this);
+        this.first = new Text('first');
+        this.second = new Text('second');
+        this.init();
     }
 
-    init(callback = param => console.log('default:', param)) {
-        console.log("initialized",this.message);
-        callback(this.message);
+    init() {
+        this.first.content(`first content: ${this.message}`);
+        this.second.content('another contents');
+    }
+}
+
+class Text {
+    constructor(id) {
+        this.domElement = document.querySelector(`#${id}`);
+    }
+
+    content(text='not set') {
+        this.domElement.innerText = text;
     }
 }
 
@@ -15,10 +27,4 @@ console.log('load time');
 const sayHello = greeting => console.log('global',greeting);
 sayHello('chief duke');
 
-const withParams = new App('java');
-withParams.init(sayHello);
-withParams.init();
-
-(function(content) {
-    console.log('anonymous', content);
-}('duke'));
+new App('Java rocks...');
