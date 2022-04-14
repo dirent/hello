@@ -12,7 +12,13 @@ class App {
 
 console.log('load time');
 
-const withParams = new App('java');
 const sayHello = greeting => console.log('global',greeting);
+sayHello('chief duke');
+
+const withParams = new App('java');
 withParams.init(sayHello);
 withParams.init();
+
+(function(content) {
+    console.log('anonymous', content);
+}('duke'));
