@@ -4,7 +4,7 @@ class App {
         console.log("created",this);
     }
 
-    init(callback = _ => console.log('callback is not defined')) {
+    init(callback = param => console.log('default:', param)) {
         console.log("initialized",this.message);
         callback(this.message);
     }
