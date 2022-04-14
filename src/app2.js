@@ -1,3 +1,5 @@
+import Text from './text.js'
+
 class App {
     constructor(message='duke') {
         this.message = message;
@@ -9,16 +11,6 @@ class App {
     init() {
         this.first.content(`first content: ${this.message}`);
         this.second.content('another contents');
-    }
-}
-
-class Text {
-    constructor(id) {
-        this.domElement = document.querySelector(`#${id}`);
-    }
-
-    content(text='not set') {
-        this.domElement.innerText = text;
     }
 }
 
