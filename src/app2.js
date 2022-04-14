@@ -4,17 +4,15 @@ class App {
         console.log("created",this);
     }
 
-    init() {
+    init(callback = _ => console.log('callback is not defined')) {
         console.log("initialized",this.message);
-        hello(this.message);
+        callback(this.message);
     }
 }
 
 console.log('load time');
 
-function hello(greeting) {
-    console.log('global',greeting);
-}
-
 const withParams = new App('java');
+const sayHello = greeting => console.log('global',greeting);
+withParams.init(sayHello);
 withParams.init();
