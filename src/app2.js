@@ -6,7 +6,7 @@ class App {
         this.message = message;
         this.first = new Text('first');
         this.second = new Text('second');
-        const listener = e => console.log(e);
+        const listener = value => console.log(value);
         this.firstInput = new Input('firstInput', listener);
         this.init();
     }
@@ -19,7 +19,7 @@ class App {
 
 console.log('loading...');
 const second = Text.lookup('second');
-console.dir(second);
+console.log(second);
 
 const sayHello = greeting => console.log('global',greeting);
 sayHello('chief duke');
