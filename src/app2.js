@@ -18,6 +18,8 @@ class App {
 }
 
 console.log('loading...');
+const second = Text.lookup('second');
+console.dir(second);
 
 const sayHello = greeting => console.log('global',greeting);
 sayHello('chief duke');
