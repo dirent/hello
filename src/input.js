@@ -2,10 +2,9 @@ import Text from './text.js';
 
 export default class Input extends Text {
 
-    constructor(id, changeListener) {
+    constructor(id, ...listeners) {
         super(id);
-        this.listeners =
-            [ changeListener, e => console.log( e.target.value ) ];
+        this.listeners = listeners;
         this.register();
     }
 
