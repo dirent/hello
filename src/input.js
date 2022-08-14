@@ -4,16 +4,12 @@ export default class Input extends Text {
 
     constructor(id, changeListener) {
         super(id);
-        this.changeListener = changeListener;
-        this.onTextChange = this.onTextChange.bind(this);
+        this.listeners =
+            [ changeListener, e => console.log( e.target.value ) ];
         this.register();
     }
 
     register() {
-        this.domElement.onchange = this.onTextChange;
-    }
-
-    onTextChange(e) {
-        this.changeListener(e.target.value);
+        this.listeners.forEach( l => this.domElement.addEventListener("change", l) );
     }
 }
