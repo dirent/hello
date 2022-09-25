@@ -22,9 +22,9 @@ class App {
     }
 
     getAnswer() {
-        this.answer.answer().then( response => {
-            this.first.content(response);
-        } );
+        this.answer.answer().
+            then( response => this.first.content(response) ).
+            catch( e => console.warn(e) );
     }
 }
 
@@ -32,5 +32,15 @@ console.log('loading...');
 
 const sayHello = greeting => console.log('global',greeting);
 sayHello('chief duke');
+
+const exceptional = () => { throw new Error('41') };
+try {
+    exceptional();
+} catch(e) {
+    console.log(`${e.message}  -->  ${e.stack}`);
+    console.error(e);
+} finally {
+    console.info('always executed');
+}
 
 const app = new App('Java rocks...');
