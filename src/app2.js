@@ -11,16 +11,21 @@ class App {
         this.firstInput = new Input('firstInput', listener);
         this.answer = new Answer();
         this.answerButton = Text.lookup('slow');
+        this.getAnswer = this.getAnswer.bind(this);
         this.init();
     }
 
     init() {
         this.first.content(`first content: ${this.message}`);
         this.second.content('another contents');
+        this.answerButton.onclick = this.getAnswer;
     }
 
     getAnswer() {
-        this.answer.answer().then( response => console.log(response) )
+        console.log('clicked');
+        this.answer.answer().then( response => {
+            this.first.content(response);
+        } );
     }
 }
 
@@ -30,4 +35,3 @@ const sayHello = greeting => console.log('global',greeting);
 sayHello('chief duke');
 
 const app = new App('Java rocks...');
-app.getAnswer();
