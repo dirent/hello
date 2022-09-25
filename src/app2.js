@@ -22,7 +22,6 @@ class App {
     }
 
     getAnswer() {
-        console.log('clicked');
         this.answer.answer().then( response => {
             this.first.content(response);
         } );
