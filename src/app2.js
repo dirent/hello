@@ -21,10 +21,9 @@ class App {
         this.answerButton.onclick = this.getAnswer;
     }
 
-    getAnswer() {
-        this.answer.answer().
-            then( response => this.first.content(response) ).
-            catch( e => console.warn(e) );
+    async getAnswer() {
+        const result = await this.answer.answer();
+        this.first.content(result);
     }
 }
 
@@ -32,15 +31,5 @@ console.log('loading...');
 
 const sayHello = greeting => console.log('global',greeting);
 sayHello('chief duke');
-
-const exceptional = () => { throw new Error('41') };
-try {
-    exceptional();
-} catch(e) {
-    console.log(`${e.message}  -->  ${e.stack}`);
-    console.error(e);
-} finally {
-    console.info('always executed');
-}
 
 const app = new App('Java rocks...');
