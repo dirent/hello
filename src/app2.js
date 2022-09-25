@@ -9,12 +9,18 @@ class App {
         this.second = new Text('second');
         const listener = value => console.log(value);
         this.firstInput = new Input('firstInput', listener);
+        this.answer = new Answer();
+        this.answerButton = Text.lookup('slow');
         this.init();
     }
 
     init() {
         this.first.content(`first content: ${this.message}`);
         this.second.content('another contents');
+    }
+
+    getAnswer() {
+        this.answer.answer().then( response => console.log(response) )
     }
 }
 
@@ -23,5 +29,5 @@ console.log('loading...');
 const sayHello = greeting => console.log('global',greeting);
 sayHello('chief duke');
 
-new App('Java rocks...');
-new Answer().answer().then( _ => console.log('42') );
+const app = new App('Java rocks...');
+app.getAnswer();
