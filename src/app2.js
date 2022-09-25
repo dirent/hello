@@ -1,5 +1,6 @@
 import Text from './text.js';
 import Input from './input.js';
+import Answer from './answer.js';
 
 class App {
     constructor(message='duke') {
@@ -18,10 +19,9 @@ class App {
 }
 
 console.log('loading...');
-const second = Text.lookup('second');
-console.dir(second);
 
 const sayHello = greeting => console.log('global',greeting);
 sayHello('chief duke');
 
 new App('Java rocks...');
+new Answer().answer().then( _ => console.log('42') );
