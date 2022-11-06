@@ -30,9 +30,9 @@ class App {
         }
     }
 
-    output( { answer:result, precision:accuracy } ) {
-        console.log(result, accuracy);
-        this.first.content(result);
+    output( { answer:result, precision:accuracy, duration:time='years' } ) {
+        console.log(result, accuracy, time);
+        this.first.content(`${result} - ${time}`);
     }
 }
 

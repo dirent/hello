@@ -10,10 +10,14 @@ export default class Input extends Text {
 
     register() {
         this.listeners.forEach( l =>
-            this.domElement.addEventListener("change", this.extract(l)) );
+            this.domElement.addEventListener("change", this.delegate(l)) );
     }
 
-    extract(listener) {
-        return e => listener(e.target.value);
+    delegate(listener) {
+        return ( { target: { value } } ) => listener( 'lean '+value );
+    }
+
+    extract({ target: { value } }) {
+        return 'extracted: ' + value;
     }
 }
