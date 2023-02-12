@@ -1,9 +1,13 @@
 export default class Answer {
 
-    answer() {
+    get answer() {
         return new Promise(function (resolve, reject) {
             setTimeout(() => resolve(new Answer().fetchFromServer()), 1000);
         });
+    }
+
+    set answer(something) {
+        console.log(something);
     }
 
     async fetchFromServer() {
