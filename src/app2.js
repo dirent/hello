@@ -44,11 +44,16 @@ class App {
         this.output(result);
     }
 
-    output( [head, ...tail] ) {
-        const { answer:result, precision:accuracy, duration:time='years' } = head;
-        console.log(tail);
-        console.log(result, accuracy, time);
-        this.first.content(`${result} - ${time}`);
+    output( data ) {
+        let [first] = data;
+        this.table = new Table('answers');
+        // create header from keys of the first row
+        Reflect.ownKeys(first).forEach( name => this.table.addHeader(name) );
+        // create rows from values
+        for( let row of data ) {
+            const { answer:result, precision:accuracy, duration:time='years' } = row;
+            this.table.addRow( result, accuracy, time );
+        }
     }
 }
 
