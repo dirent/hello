@@ -21,11 +21,6 @@ class App {
     }
 
     init() {
-        this.table.addHeader('java');
-        this.table.addHeader('duke');
-        this.table.addRow('one', 'two');
-        this.table.addRow(3, 4);
-
         this.first.content(`first content: ${this.message}`);
         this.second.content('another contents');
         this.answerButton.onclick = this.getAnswer;
@@ -51,10 +46,8 @@ class App {
         const names = Reflect.ownKeys(first);
         names.forEach( name => this.table.addHeader(name) );
         // create rows from values
-        for( let d of data ) {
-            let row = [];
-            names.forEach( name => row.push(d[name]) );
-            this.table.addRow( ...row );
+        for( let row of data ) {
+            this.table.addRow( names.map( key => row[key] ) );
         }
     }
 }
