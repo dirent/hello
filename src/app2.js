@@ -48,11 +48,13 @@ class App {
         let [first] = data;
         this.table = new Table('answers');
         // create header from keys of the first row
-        Reflect.ownKeys(first).forEach( name => this.table.addHeader(name) );
+        const names = Reflect.ownKeys(first);
+        names.forEach( name => this.table.addHeader(name) );
         // create rows from values
-        for( let row of data ) {
-            const { answer:result, precision:accuracy, duration:time='years' } = row;
-            this.table.addRow( result, accuracy, time );
+        for( let d of data ) {
+            let row = [];
+            names.forEach( name => row.push(d[name]) );
+            this.table.addRow( ...row );
         }
     }
 }
