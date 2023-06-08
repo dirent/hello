@@ -2,9 +2,8 @@ export default class Table {
 
     constructor(id) {
         this.table = document.getElementById(id);
-        this.head = this.table.getElementsByTagName('thead')[0];
-        this.headerRow = document.createElement('tr');
-        this.head.getElementsByTagName('tr')[0].replaceWith(this.headerRow);
+        this.head = document.createElement('thead');
+        this.table.getElementsByTagName('thead')[0].replaceWith(this.head);
         this.body = document.createElement('tbody');
         this.table.getElementsByTagName('tbody')[0].replaceWith(this.body);
     }
@@ -12,7 +11,7 @@ export default class Table {
     addHeader(rowName) {
         const th = document.createElement('th');
         th.innerText = rowName;
-        this.headerRow.appendChild(th);
+        this.head.appendChild(th);
     }
 
     addRow(...columns) {
