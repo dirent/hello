@@ -2,11 +2,11 @@ export default class Answer {
 
     get answer() {
         return new Promise(function (resolve, reject) {
-            setTimeout(() => resolve(new Answer().fetchFromServer()), 1000);
+            resolve(new Answer().fetchFromServer());
         });
     }
 
     async fetchFromServer() {
-        return await fetch('answer.json').then(response => response.json());
+        return await fetch('http://localhost:8080/answers').then(response => response.json());
     }
 }
