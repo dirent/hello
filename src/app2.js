@@ -2,6 +2,7 @@ import Text from './text.js';
 import Input from './input.js';
 import Answer from './answer.js';
 import Table from './table.js';
+import Clock from './clock.js';
 import * as Storage from './store.js';
 
 class App {
@@ -17,6 +18,8 @@ class App {
         this.getAnswer = this.getAnswer.bind(this);
         this.store = new Storage.Store('response');
         console.log( Storage.precalculated );
+        this.onTime = this.onTime.bind(this);
+        this.clock = new Clock(this.onTime);
         this.init();
     }
 
@@ -24,6 +27,10 @@ class App {
         this.first.content(`first content: ${this.message}`);
         this.second.content('another contents');
         this.answerButton.onclick = this.getAnswer;
+    }
+
+    onTime(time) {
+        this.first.content(time);
     }
 
     async getAnswer() {
